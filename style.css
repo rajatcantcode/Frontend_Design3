@@ -1,0 +1,213 @@
+@font-face {
+  font-family: face;
+  src: url(Gilroy-Font/Gilroy-SemiBold.ttf);
+}
+@font-face {
+  font-family: light;
+  src: url(Gilroy-Font/Gilroy-Light.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: face;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#main {
+  height: 100%;
+  width: 100%;
+}
+#nav {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#nav-left {
+  width: 50%;
+  padding: 1.7vw 2.5vw;
+  display: flex;
+  justify-content: flex-start;
+}
+#gola {
+  height: 2.1vw;
+  width: 2.1vw;
+  border-radius: 50%;
+  background-color: black;
+}
+#nav-right {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2.1vw;
+  padding: 0px 3vw;
+}
+.h {
+  font-weight: 500;
+}
+#nav-right h5 {
+  display: none;
+}
+#nav2 {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3vw;
+  padding: 1.7vw 2.7vw;
+}
+.a {
+  font-family: light;
+  font-size: large;
+}
+#content {
+  /* make sure to have space ' - ' space front and back to negative sign */
+  height: calc(90% - 40px);
+  /* This is used to calculate the remaining part of the website*/
+  width: 100%;
+}
+#text-content {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  /* flex do shrink the element length in order to fulfill its goal */
+  justify-content: flex-start;
+  padding: 40px 0px 40px 36vw;
+  /* 2.This will create scroller at fit-content area in x-axis*/
+  overflow-x: auto;
+}
+.elem {
+  height: 100%;
+  width: fit-content;
+  /* NOTE :width is 40% then how they are in single line */
+  flex-shrink: 0;
+  /* 1.it won't allow the elements to shrink by flex and be their original size */
+  /* this will lead to create a scroller around the whole page */
+  display: flex;
+  gap: 50px;
+}
+#left {
+  padding: 60px 40px 20px 20px;
+}
+#right {
+  padding: 60px 40px 20px 0px;
+}
+#right h1 {
+  font-family: light;
+  font-size: 120px;
+}
+#right h3 {
+  font-family: light;
+}
+/* how to edit the scroll bar  */
+/* it's made on text-content where we have use overflow-x */
+
+/* -webkit-scrollbar helps in to target scrollabr */
+#text-content::-webkit-scrollbar {
+  /* this will make scrollbar transparent and allow -webkit-scrollbar color look well*/
+  background-color: transparent;
+  height: 6px;
+}
+
+#text {
+  display: flex;
+}
+
+/* in web design we could see we need to drag the scroll bar for that new property is there */
+#text-content::-webkit-scrollbar-thumb {
+  /* This is coloured dragger  */
+  background-color: orangered;
+}
+#image-content {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+}
+#image-content::-webkit-scrollbar {
+  display: none;
+}
+#image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  #nav {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+  }
+  #nav-right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2.1vw;
+    padding: 0px 3vw;
+  }
+  .h {
+    font-weight: 500;
+    display: none;
+  }
+  #nav-right h5 {
+    display: initial;
+  }
+  #nav-right i {
+    font-size: 20px;
+  }
+  #nav2 {
+    height: 25px;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 1.7vw 2.7vw; */
+  }
+  .a {
+    font-family: light;
+    font-size: 2.7vw;
+  }
+  #text-content {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    /* flex do shrink the element length in order to fulfill its goal */
+    justify-content: flex-start;
+    padding: 0px 0px 0px 0px;
+    /* 2.This will create scroller at fit-content area in x-axis*/
+    overflow-x: auto;
+  }
+  .elem {
+    height: 100%;
+    width: fit-content;
+    gap: 0px;
+  }
+  #right h1 {
+    font-family: light;
+    font-size: 80px;
+  }
+  #right h3 {
+    font-family: light;
+  }
+  #image-content {
+    height: 60%;
+    width: 100%;
+  }
+  #image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+}
